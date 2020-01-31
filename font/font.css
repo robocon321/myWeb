@@ -1,0 +1,12 @@
+@font-face{
+	src:url(myFont.TTF);
+	font-family: hihi;
+}
+#file{
+	font-family: hihi;
+	font-size: 30px;
+}
+#google{
+	font-family: 'Big Shoulders Display', cursive;
+	font-size: 30px;
+}
