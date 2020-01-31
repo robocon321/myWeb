@@ -1,0 +1,123 @@
+*{margin: 0; padding: 0;}
+
+#slide01 h5 {
+    font-size: 26px;
+    font-family: lato-r;
+    color: #222533;
+}
+
+#slide01 h3 {
+    font-size: 50px;
+    font-family: lato-b;
+    text-transform: uppercase;
+    color: #1a1c27;
+} 
+#slide01 ul.list1 {
+	list-style:none;
+}
+
+#slide01 ul.list1 li i {
+	margin-right:10px;
+	font-size:25px;
+}
+
+
+@font-face {
+	src:url(fonts/Lato-Regular.ttf);
+	font-family: lato-r; 
+}
+@font-face {
+	src:url(fonts/Lato-Light.ttf);
+	font-family: lato-l; 
+}
+@font-face {
+	src:url(fonts/Lato-Bold.ttf);
+	font-family: lato-b; 
+}
+
+
+/*css cho phan topheader*/
+.topheader{
+	border-top:#0787d4 5px solid;
+	background:#21c2f8;
+	padding-top: 13px;
+}
+.iconsocial a {
+	color:white;
+	display: inline-block;
+	padding:0 8px;
+}
+
+.mtren1 {padding:0;margin:0;}
+.nut .btn-outline-secondary, .nut .btn-secondary {
+	font-family:lato-b;
+	font-size:14px;
+	color:white;
+	line-height: 19px;
+	padding:8px 13px ;
+	border-radius:1px;
+	border:1px solid white; 
+	margin-top:-3px;
+	margin-bottom:10px;
+}
+.nut  .btn-secondary {
+	color:#a1b1bc;
+}
+
+/*css cho menutrenphai*/
+.mtrenphai li.nav-item  a.nav-link {
+	font-family: lato-r ; 
+	font-size:14px;
+	color:#2c3e50;
+	padding:40px 20px 45px 20px ;
+	border-top:5px solid transparent;
+	text-transform: uppercase;
+
+}
+.mtrenphai li.nav-item.active  a.nav-link {
+	color:#1abc9c;
+	border-color:#1abc9c;
+}
+
+.mtrenphai li.nav-item.iconmenu  a.nav-link{
+	color: #a1b1bc;
+	font-size: 29px;
+	padding: 25px 11px;
+}
+/*css cho slide*/
+
+#slide01 {
+	height:500px;
+	overflow: hidden;
+}
+#slide01 .carousel-item  .carousel-caption {
+	 bottom:56%;
+	 text-align:left;
+}
+ 
+
+.nutslide  .carousel-control{
+	background:none;
+}
+.nutslide .carousel-control{
+	border:1px solid white;
+	width:50px;
+	height:50px;
+	top:50%;
+	margin:0 100px;
+	position: absolute;
+}
+@media (max-width:576px) {
+	.nut {
+		text-align: center;
+		margin-top:20px;
+	}
+	.iconsocial {
+		text-align: center;
+	}
+	.mtrenphai li.nav-item  a.nav-link {		 
+		padding:10px 5px; 	 
+		border-bottom:1px dashed gray;
+	}
+
+}

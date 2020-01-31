@@ -1,0 +1,45 @@
+*{margin: 0; padding: 0;} 
+.top {
+	background-image:url(images/1.jpg);
+	background-size:cover;
+	height:700px;
+}
+.mtren {
+	background:transparent;
+}
+a.logo {
+	font-family: 'Roboto Slab', serif;
+	font-size: 26px;
+	background:#ec6952;
+	padding: 20px 39px;
+	position: relative;
+	top: -8px;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	font-weight: 700;
+}
+
+.top .mphai  a.nav-link{
+	text-transform: uppercase;
+	padding: 28px 23px;
+	font-size:13px;
+	font-family: 'Roboto Slab', serif;
+	color: #e6e6e6;
+	transition: 0.4s;
+}
+.top .mphai  li.active a.nav-link {
+	color:#ec6952;	
+}
+.top .mphai  a.nav-link:hover {
+	color:#ec6952;	
+}
+.top .mphai  a.nav-link.nutsignup {
+	border-color:white;
+	padding: 12px 22px;
+	margin-top: 18px;
+}
+.top .mphai  a.nav-link.nutsignup:hover {
+	background:#ec6952;
+	border-color:#ec6952;
+	color:white;
+}

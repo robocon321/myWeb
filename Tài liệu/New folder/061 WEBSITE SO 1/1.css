@@ -1,0 +1,5 @@
+*{margin: 0; padding: 0;} 
+.navbar-dark .navbar-nav.khungmenu .nav-link {
+    font-size: 13px;
+    padding: 17px 0px;
+}

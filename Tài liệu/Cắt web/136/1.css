@@ -1,0 +1,45 @@
+*{margin: 0; padding: 0;} 
+.nenden {
+	background:url(images/bg-header.png) center;
+	padding:0px;
+	margin:0px;
+	height:144px;
+}
+#mtren {width:100%;}
+.menutren  li.nav-item  a.nav-link {
+	color:white; 
+	font-size: 12px;
+	font-family: tahoma;
+	padding:13px 14px;
+	margin-right:5px; 
+	margin-top:58px;
+	border-radius: 17px;
+
+}
+ 
+.menutren  li.nav-item.active  a.nav-link,
+.menutren  li.nav-item  a.nav-link:hover 
+{
+	background-color:#282828;
+	color:white;
+}
+
+.banner {
+	background:url(images/bg-banner.png) center   ;
+	background-size:contain;
+	height:348px;
+	padding-top:105px;
+}
+.caunoi,.tacgia {
+	color:white;
+	font-family: tahoma; 
+	font-size:24px;
+	padding:18px 40px;
+	background-color:#d14786;
+	display:inline-block; 
+}
+.tacgia {
+	padding:9px 18px; 
+	font-size:16px;
+	display: inline-block;
+ }
