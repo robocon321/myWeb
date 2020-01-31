@@ -1,0 +1,29 @@
+.level1{
+	list-style-type: none;
+}
+.level1>li{
+	position: relative;
+	border: 1px solid black;
+	float: left;
+	display: inline-block;
+	width: 50px;
+	height: 20px;
+	background-color: blue;
+	padding: 10px;
+}
+.level2{
+    position: absolute;
+    left: -41px;
+    top: 41px;
+    visibility: hidden;
+}
+.level2>li{
+	width: 70px;
+	display: inline-block;
+	list-style-type: none;
+	background-color: yellow;
+	border: 1px solid black;
+}
+.level1>li:hover .level2{
+	visibility: visible;
+}
