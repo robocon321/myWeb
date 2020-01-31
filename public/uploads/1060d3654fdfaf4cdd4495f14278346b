@@ -1,0 +1,162 @@
+package Baitapgiuaki;
+
+
+public class Laptop implements Comparable<Laptop>{
+	private String id;
+	private String name;
+	private double gia;
+	private OCung oCung;
+	private String boXuLy;
+	private int ram;
+	private double kichThuocManHinh;
+	private boolean tinhTrang;
+	private double khoiLuong;
+	
+	public Laptop(String id, String name, double gia,  OCung oCung,String boXuLy, int ram, double kichThuocManHinh, boolean tinhTrang,double khoiLuong) {
+		this.id = id;
+		this.name = name;
+		this.gia = gia;
+		this.oCung = oCung;
+		this.boXuLy = boXuLy;
+		this.ram = ram;
+		this.kichThuocManHinh = kichThuocManHinh;
+		this.tinhTrang = tinhTrang;
+		this.khoiLuong=khoiLuong;
+	}
+
+	public double getKhoiLuong() {
+		return khoiLuong;
+	}
+
+	public void setKhoiLuong(double khoiLuong) {
+		this.khoiLuong = khoiLuong;
+	}
+
+	public Laptop() {
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public double getGia() {
+		return gia;
+	}
+
+	public void setGia(double gia) {
+		this.gia = gia;
+	}
+	
+	public OCung getoCung() {
+		return oCung;
+	}
+
+	public void setoCung(OCung oCung) {
+		this.oCung = oCung;
+	}
+
+	public String getBoXuLy() {
+		return boXuLy;
+	}
+
+	public void setBoXuLy(String boXuLy) {
+		this.boXuLy = boXuLy;
+	}
+
+	public int getRam() {
+		return ram;
+	}
+
+	public void setRam(int ram) {
+		this.ram = ram;
+	}
+
+	public double getKichThuocManHinh() {
+		return kichThuocManHinh;
+	}
+
+	public void setKichThuocManHinh(double kichThuocManHinh) {
+		this.kichThuocManHinh = kichThuocManHinh;
+	}
+
+	public boolean getTinhTrang() {
+		return tinhTrang;
+	}
+
+	public void setTinhTrang(boolean tinhTrang) {
+		this.tinhTrang = tinhTrang;
+	}
+	
+	@Override
+	public String toString() {
+		String result =this.name+" "+this.boXuLy+" Ram "+this.ram+"G, Ổ cứng"+" "+this.oCung+", màn hình "+this.kichThuocManHinh+"inch,"+" khối lượng "+this.khoiLuong+"kg, tình trạng: "+(getTinhTrang() ? "đã qua sử dụng":"chưa qua sử dụng")+" "+"- giá:"+this.gia+"tr";
+		return result;
+	}
+
+	@Override
+	public int compareTo(Laptop o) {
+		return this.name.compareTo(o.name);
+	}
+	
+	public int compare_Gia(Laptop o) {
+		if(this.gia==o.gia) {
+			return 0;
+		}else if(this.gia>o.gia) {
+			return 1;
+		}else { 
+			return -1;
+		}
+	}
+	public int compare_Id(Laptop o) {
+		return this.id.compareTo(o.id);
+	}
+	public int compare_Ram(Laptop o) {
+		if(this.ram==o.ram) {
+			return 0;
+		}else if(this.ram>o.ram) {
+			return 1;
+		}else { 
+			return -1;
+		}		
+	}
+	public int compare_OCung(Laptop o) {
+		return this.oCung.toString().compareTo(o.oCung.toString());	
+	}
+	public int compare_KichThuoc(Laptop o) {
+		if(this.kichThuocManHinh==o.kichThuocManHinh) {
+			return 0;
+		}else if(this.kichThuocManHinh>o.kichThuocManHinh) {
+			return 1;
+		}else { 
+			return -1;
+		}		
+	}
+	public int compare_KhoiLuong(Laptop o) {
+		if(this.khoiLuong==o.khoiLuong) {
+			return 0;
+		}else if(this.khoiLuong>o.khoiLuong) {
+			return 1;
+		}else { 
+			return -1;
+		}		
+	}
+	public int compare_Bxl(Laptop o) {
+		return this.boXuLy.compareTo(o.boXuLy);	
+	}
+	public int compare_TinhTrang(Laptop o) {
+		return (this.tinhTrang+"").compareTo(o.tinhTrang+"");	
+	}
+
+}

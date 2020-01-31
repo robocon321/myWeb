@@ -1,0 +1,21 @@
+package Baitapgiuaki;
+
+import java.awt.FlowLayout;
+
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JTextField;
+
+public class InsertDialog extends JDialog{
+	public static JTextField txtInsert=new JTextField(10);
+	public static JButton btnInsert_d=new JButton("Insert");
+	public InsertDialog() {
+		this.setTitle("Bạn muốn chèn ở đâu?");
+		this.setLocationRelativeTo(null);
+		this.setVisible(true);
+		this.setLayout(new FlowLayout());
+		this.add(txtInsert);
+		this.add(btnInsert_d);
+		this.pack();
+	}
+}

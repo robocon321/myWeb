@@ -1,0 +1,37 @@
+package Baitapgiuaki;
+
+
+public class OCung {
+	private int dungLuong;
+	private String loai;
+	
+	public OCung(int dungLuong, String loai) {
+		
+		this.dungLuong = dungLuong;
+		this.loai = loai;
+	}
+
+	public int getDungLuong() {
+		return dungLuong;
+	}
+
+	public void setDungLuong(int dungLuong) {
+		this.dungLuong = dungLuong;
+	}
+
+	public String getLoai() {
+		return loai;
+	}
+
+	public void setLoai(String loai) {
+		this.loai = loai;
+	}
+	@Override
+	public String toString() {
+		return getLoai()+" "+ getDungLuong()+"G";
+	}
+	public static void main(String[] args) {
+		OCung o1 = new OCung(256, "ssd");
+		System.out.println(o1.toString());
+	}
+}

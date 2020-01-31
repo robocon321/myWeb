@@ -1,0 +1,166 @@
+package Baitapgiuaki;
+
+public class MyLinkedList<E extends Laptop> {
+	private Node<E> header;
+	private Node<E> trailer;
+	private int size = 0;
+
+	public int getSize() {
+		return size;
+	}
+
+	public MyLinkedList() {
+		header = new Node<>(null, null);
+		trailer = new Node<>(null, null);
+		header.setNext(this.trailer);
+	}
+
+	public boolean isEmpty() {
+		return size == 0;
+	}
+
+	public Node<E> addFirst(E e) {
+		Node<E> newest = new Node<>(e, null);
+		newest.setNext(header.getNext());
+		header.setNext(newest);
+		size++;
+		return newest;
+	}
+
+	public Node<E> addAfter(E eNode,E e) {
+		Node<E> newest = new Node<>(e, null);
+		Node<E> node_temp=this.header;
+		while(node_temp.getElement()!=eNode) {
+			node_temp=node_temp.getNext();
+			if(node_temp==this.trailer) {
+				return null;
+			}
+		}
+		newest.setNext(node_temp.getNext());
+		node_temp.setNext(newest);
+		size++;
+		return newest;
+	}
+
+	public Node<E> addLast(E e) {
+		Node<E> newest = new Node<>(e, null);
+		newest.setNext(this.trailer);
+		Node<E> check = this.header;
+		while (check.getNext() != this.trailer) {
+			check = check.getNext();
+		}
+		check.setNext(newest);
+		size++;
+		return newest;
+	}
+
+	public E removeFirst() {
+		Node<E> node_temp = this.header.getNext();
+		this.header.setNext(node_temp.getNext());
+		node_temp.setNext(null);
+		node_temp.setElement(null);
+		size--;
+		return this.header.getNext().getElement();
+	}
+
+	public E removeLast() {
+		Node<E> node_temp = this.header;
+		if(node_temp.getNext()==this.trailer) {
+			return null;
+		}
+		while (node_temp.getNext().getNext() != this.trailer) {
+			node_temp=node_temp.getNext();
+		}
+		E e = node_temp.getNext().getElement();
+		node_temp.getNext().setNext(null);
+		node_temp.getNext().setElement(null);
+		node_temp.setNext(trailer);
+		size--;
+		return e;
+	}
+	public E removeAfter(E eNode) {
+		Node<E> node_temp=this.header;
+		while(node_temp.getElement()!=eNode) {
+			node_temp=node_temp.getNext();
+			if(node_temp==this.trailer) {
+				return null;
+			}
+		}
+		E e=node_temp.getElement();
+		node_temp.setNext(node_temp.getNext().getNext());
+		node_temp.getNext().setNext(null);
+		node_temp.getNext().setElement(null);
+		return e;
+	}
+
+	public boolean removeValue(E e) {
+		Node<E> prev = header;
+		Node<E> p = header.getNext();
+		while (p.getElement() != e || p.getNext() == null)
+		{
+			p = p.getNext();
+			prev = prev.getNext();
+		}
+		if (p.getNext() != null)
+		{
+			prev.setNext(p.getNext());
+			p.setElement(null);
+			p.setNext(null);
+			size--;
+			return true;
+		}
+		System.out.println("Fail to remove " + e.toString() + " from list!");
+		size--;
+		return false;
+	}
+	
+	public E getValue(int index) {
+		E result=null;
+		int i=-1;
+		if(index>=this.getSize() || index<0) {
+			return null;
+		}
+		Node<E> node_temp=this.header;
+		while(i<index) {
+			node_temp=node_temp.getNext();
+			i++;
+		}
+		result=node_temp.getElement();
+		return result;
+	}
+	public void setValue(int index,E value) {
+		E result=null;
+		int i=-1;
+		if(index>=this.getSize() || index<0) {
+			return ;
+		}
+		Node<E> node_temp=this.header;
+		while(i<index) {
+			node_temp=node_temp.getNext();
+			i++;
+		}
+		node_temp.setElement(value);;
+	}
+	
+	@Override
+	public String toString() {
+		String result = "";
+		Node<E> node_temp = this.header.getNext();
+		while (node_temp.getNext() != null) {
+			result += node_temp.getElement() + "\n";
+			node_temp=node_temp.getNext();
+		}
+		return result;
+	}
+	public void addIndex(E e,int index) {
+		Node<E> newest=new Node<>(e, null);
+		int i=0;
+		Node<E> node_temp=this.header;
+		while(i!=index) {
+			node_temp=node_temp.getNext();
+			i++;
+		}
+		newest.setNext(node_temp.getNext());
+		node_temp.setNext(newest);
+	}
+}

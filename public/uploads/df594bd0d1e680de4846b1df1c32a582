@@ -1,0 +1,220 @@
+package Baitapgiuaki;
+
+public class ListLaptop extends MyLinkedList<Laptop> {
+	// Bắt đầu sắp xếp ==============================================================
+	public ListLaptop sapXepTheoTen(boolean check) {
+		for (int i = 0; i < this.getSize(); i++) {
+			for (int j = i; j < this.getSize(); j++) {
+				if (check ? this.getValue(i).compareTo(this.getValue(j)) < 0
+						: this.getValue(i).compareTo(this.getValue(j)) >= 0) {
+					Laptop lap = this.getValue(i);
+					this.setValue(i, this.getValue(j));
+					this.setValue(j, lap);
+				}
+			}
+		}
+		return this;
+	}
+
+	public ListLaptop sapXepTheoId(boolean check) {
+		for (int i = 0; i < this.getSize(); i++) {
+			for (int j = i; j < this.getSize(); j++) {
+				if (check ? this.getValue(i).compare_Id(this.getValue(j)) < 0
+						: this.getValue(i).compare_Id(this.getValue(j)) >= 0) {
+					Laptop lap = this.getValue(i);
+					this.setValue(i, this.getValue(j));
+					this.setValue(j, lap);
+				}
+			}
+		}
+		return this;
+	}
+
+	public ListLaptop sapXepTheoGia(boolean check) {
+		for (int i = 0; i < this.getSize(); i++) {
+			for (int j = i; j < this.getSize(); j++) {
+				if (check ? this.getValue(i).compare_Gia(this.getValue(j)) < 0
+						: this.getValue(i).compare_Gia(this.getValue(j)) >= 0) {
+					Laptop lap = this.getValue(i);
+					this.setValue(i, this.getValue(j));
+					this.setValue(j, lap);
+				}
+			}
+		}
+		return this;
+	}
+
+	public ListLaptop sapXepTheoRam(boolean check) {
+		for (int i = 0; i < this.getSize(); i++) {
+			for (int j = i; j < this.getSize(); j++) {
+				if (check ? this.getValue(i).compare_Ram(this.getValue(j)) < 0
+						: this.getValue(i).compare_Ram(this.getValue(j)) >= 0) {
+					Laptop lap = this.getValue(i);
+					this.setValue(i, this.getValue(j));
+					this.setValue(j, lap);
+				}
+			}
+		}
+		return this;
+	}
+	
+	public ListLaptop sapXepTheoOCung(boolean check) {
+		for (int i = 0; i < this.getSize(); i++) {
+			for (int j = i; j < this.getSize(); j++) {
+				if (check ? this.getValue(i).compare_OCung(this.getValue(j)) < 0
+						: this.getValue(i).compare_OCung(this.getValue(j)) >= 0) {
+					Laptop lap = this.getValue(i);
+					this.setValue(i, this.getValue(j));
+					this.setValue(j, lap);
+				}
+			}
+		}
+		return this;
+	}
+	
+	public ListLaptop sapXepTheoKichThuocManHinh(boolean check) {
+		for (int i = 0; i < this.getSize(); i++) {
+			for (int j = i; j < this.getSize(); j++) {
+				if (check ? this.getValue(i).compare_KichThuoc(this.getValue(j)) < 0
+						: this.getValue(i).compare_KichThuoc(this.getValue(j)) >= 0) {
+					Laptop lap = this.getValue(i);
+					this.setValue(i, this.getValue(j));
+					this.setValue(j, lap);
+				}
+			}
+		}
+		return this;
+	}
+	
+	public ListLaptop sapXepTheoBxl(boolean check) {
+		for (int i = 0; i < this.getSize(); i++) {
+			for (int j = i; j < this.getSize(); j++) {
+				if (check ? this.getValue(i).compare_Bxl(this.getValue(j)) < 0
+						: this.getValue(i).compare_Bxl(this.getValue(j)) >= 0) {
+					Laptop lap = this.getValue(i);
+					this.setValue(i, this.getValue(j));
+					this.setValue(j, lap);
+				}
+			}
+		}
+		return this;
+	}
+	
+	public ListLaptop sapXepTheoTinhTrang(boolean check) {
+		for (int i = 0; i < this.getSize(); i++) {
+			for (int j = i; j < this.getSize(); j++) {
+				if (check ? this.getValue(i).compare_TinhTrang(this.getValue(j)) < 0
+						: this.getValue(i).compare_TinhTrang(this.getValue(j)) >= 0) {
+					Laptop lap = this.getValue(i);
+					this.setValue(i, this.getValue(j));
+					this.setValue(j, lap);
+				}
+			}
+		}
+		return this;
+	}
+	
+	public ListLaptop sapXepTheoKhoiLuong(boolean check) {
+		for (int i = 0; i < this.getSize(); i++) {
+			for (int j = i; j < this.getSize(); j++) {
+				if (check ? this.getValue(i).compare_KhoiLuong(this.getValue(j)) < 0
+						: this.getValue(i).compare_KhoiLuong(this.getValue(j)) >= 0) {
+					Laptop lap = this.getValue(i);
+					this.setValue(i, this.getValue(j));
+					this.setValue(j, lap);
+				}
+			}
+		}
+		return this;
+	}
+	
+	
+	// Kết thúc phương thức sắp xếp ========================================================
+	
+	// Bắt đầu phương thức search =========================================================
+	
+	public ListLaptop searchLaptop(String str) {
+		if(str=="") {
+			return this;
+		}
+		ListLaptop list=new ListLaptop();
+		for(int i=0;i<this.getSize();i++) {
+			if((this.getValue(i).getId()+this.getValue(i)).toUpperCase().toString().indexOf(str.toUpperCase())>=0){
+				list.addFirst(this.getValue(i));
+			}
+		}
+		return list;
+	}
+	
+	// Kết thúc phương thức search =========================================================
+	
+	// Bắt đầu phần lọc theo các tiêu chí laptop ===========================================
+	
+	public ListLaptop locTheoGia(int start,int end) {
+		ListLaptop list=new ListLaptop();
+		for(int i=0;i<this.getSize();i++) {
+			if(this.getValue(i).getGia()>start && this.getValue(i).getGia()<=end) {
+				list.addLast(this.getValue(i));
+			}
+		}
+		return list;
+	}
+	
+	public ListLaptop locTheoRam(int start,int end) {
+		ListLaptop list=new ListLaptop();
+		for(int i=0;i<this.getSize();i++) {
+			if(this.getValue(i).getRam()>start && this.getValue(i).getRam()<=end) {
+				list.addLast(this.getValue(i));
+			}
+		}
+		return list;
+	}
+	
+	public ListLaptop locTheoKichThuocManHinh(int start,int end) {
+		ListLaptop list=new ListLaptop();
+		for(int i=0;i<this.getSize();i++) {
+			if(this.getValue(i).getKichThuocManHinh()>start && this.getValue(i).getKichThuocManHinh()<=end) {
+				list.addLast(this.getValue(i));
+			}
+		}
+		return list;
+	}
+
+	public ListLaptop locTheoBXL(String str) {
+		ListLaptop list=new ListLaptop();
+		for(int i=0;i<this.getSize();i++) {
+			if(this.getValue(i).getBoXuLy()==str) {
+				list.addLast(this.getValue(i));
+			}
+			if(str=="more") {
+				if(this.getValue(i).getBoXuLy()!="core i3" && this.getValue(i).getBoXuLy()!="core i5" && this.getValue(i).getBoXuLy()!="core i7") {
+					list.addLast(this.getValue(i));
+				}
+			}
+		}
+		return list;
+	}
+	
+	public ListLaptop locTheoLoaiOCung(String hardware) {
+		ListLaptop list=new ListLaptop();
+		for(int i=0;i<this.getSize();i++) {
+			if(this.getValue(i).getoCung().getLoai()==hardware) {
+				list.addLast(this.getValue(i));
+			}
+		}
+		return list;
+	}
+	
+	public ListLaptop locTheoTinhTrangLaptop(boolean check) {
+		ListLaptop list=new ListLaptop();
+		for(int i=0;i<this.getSize();i++) {
+			if(this.getValue(i).getTinhTrang()==check) {
+				list.addLast(this.getValue(i));
+			}
+		}
+		return list;
+	}
+
+
+	// Kết thúc phần lọc theo các tiêu chí laptop ==========================================
+}
