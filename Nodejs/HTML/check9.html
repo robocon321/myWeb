@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Title</title>
+</head>
+
+<body>
+    <p data-id="1">Katana Shibuya nodal point meta-artisanal dissident plastic boat uplink tower camera neon. Faded ablative franchise monofilament kanji urban grenade cartel camera dolphin tank-traps math-garage. Wristwatch free-market receding motion decay 8-bit 3D-printed hacker media girl assault bridge. </p>
+    <p data-id="2">Katana boat car dead 3D-printed free-market boy singularity Kowloon sub-orbital sensory digital weathered hacker-space camera.-space motion sign industrial grade systema 3D-printed sub-orbital fetishism assault market carbon narrative geodesic table. Car apophenia modem stimulate katana narrative receding. Crypto-shanty town cardboard fluidity saturation point garage vehicle range-rover tower rain tanto urban beef noodles. </p>
+    <p data-id="3">Free-market Shibuya city claymore mine systemic footage carbon beef noodles dissident narrative. Nodality stimulate tiger-team hotdog dolphin futurity assassin drone warehouse ablative. Spook apophenia garage carbon systemic range-rover monofilament math-convenience store tower wonton soup lights knife shoes woman boat. Office drugs physical soul-delay tube euro-pop youtube monofilament dome BASE jump. Bridge crypto-bicycle tattoo wonton soup render-farm systemic shanty town into franchise modem Legba saturation point Chiba vehicle drugs nodality. </p>
+    <h1>My list</h1>
+    <input type="text" id="addInput" />
+    <button type="button" id="addBtn" onclick="addItem(document.getElementById('addInput').value)">Add</button>
+    <br />
+    <br />
+    <label>Id:</label>
+    <input type="text" id="updateIdInput" />
+    <label>Name:</label>
+    <input type="text" id="updateNameInput" />
+    <button type="button" id="updateBtn" onclick="updateItem(document.getElementById('updateIdInput').value,document.getElementById('updateNameInput').value)">Update</button>
+    <button type="button" id="deleteBtn" onclick="deleteItem(document.getElementById('updateIdInput').value)">Delete</button>
+    <ol>
+    </ol>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js">
+    var axios = require('axios');
+    </script>
+    <script>
+    var arr = [];
+    showAllItem();
+
+    function showAllItem() {
+        axios.get('http://localhost:3000/newList').then(function(response) {
+            arr = response.data;
+            var para = document.getElementsByTagName('ol')[0];
+            var contentPara = "";
+            for (var i = 0; i < arr.length; i++) {
+                contentPara += "<li>" + arr[i].name + "</li>";
+            }
+            para.innerHTML = contentPara;
+        }).catch(function(err) {
+            document.write(err);
+        });
+    }
+
+    function addItem(content) {
+        axios.post("http://localhost:3000/newList", {
+            name: content + ""
+        }).then(function(response) {
+            console.log(response);
+            showAllItem();
+        }).catch(function(err) {
+            console.log(err);
+        });
+    }
+
+    function updateItem(id, customName) {
+        axios.put("http://localhost:3000/newList/" + id, {
+            name: customName + ""
+        }).then(function(response) {
+            console.log(response);
+            showAllItem();
+        }).catch(function(err) {
+            console.log(err);
+        })
+    }
+
+    function deleteItem(id) {
+        axios.delete("http://localhost:3000/newList/" + id).then(function(response) {
+            console.log(response);
+            showAllItem();
+        }).catch(function(err) {
+            console.log(err);
+        })
+    }
+    // patch thì gần giống như put. Put là  phương thức sửa dùng một object mới với những thuộc tính giống cái cũ và một thuộc tính đã sửa, còn patch thì sửa phần cần sửa thôi không dũng một obj mới
+    </script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="/__/firebase/7.3.0/firebase-app.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="/__/firebase/7.3.0/firebase-analytics.js"></script>
+    <!-- Initialize Firebase -->
+    <script src="/__/firebase/init.js"></script>
+</body>
+
+</html>

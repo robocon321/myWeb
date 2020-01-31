@@ -1,0 +1,74 @@
+{
+  "newList": [
+    {
+      "id": "001",
+      "name": "Go home"
+    },
+    {
+      "name": "Walk garden",
+      "id": "003"
+    },
+    {
+      "name": "Hora",
+      "id": "0y-RHIE"
+    },
+    {
+      "name": "Go to bed",
+      "id": "gQGx-A1"
+    },
+    {
+      "name": "Wash cup",
+      "id": "0F_REYY"
+    },
+    {
+      "name": "Drink water",
+      "id": "yJBORxx"
+    },
+    {
+      "name": "Eat rice",
+      "id": "giJx-iF"
+    },
+    {
+      "name": "Go to school",
+      "id": "s3C7bUV"
+    },
+    {
+      "name": "Dancing",
+      "id": "HCzxTK0"
+    },
+    {
+      "name": "Play badminton",
+      "id": "LCHgllD"
+    },
+    {
+      "name": "Go fishing",
+      "id": "bcp3SY8"
+    }
+  ],
+  "data": [
+    {
+      "id": "kh001",
+      "name": "Hoàng"
+    },
+    {
+      "id": "kh003",
+      "name": "Thanh"
+    },
+    {
+      "id": "kk002",
+      "name": "Bích"
+    },
+    {
+      "id": "kk003",
+      "name": "Hồng"
+    },
+    {
+      "id": "kl003",
+      "name": "Khanh"
+    },
+    {
+      "id": "al003",
+      "name": "Hạnh"
+    }
+  ]
+}
