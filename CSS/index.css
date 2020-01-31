@@ -1,0 +1,16 @@
+h1{
+	color:blue;
+	font-size: 50px;
+}
+table{
+	width:100%;
+}
+th{
+	background-color: #FF9090;
+}
+tr:nth-child(even){
+	background-color: yellow;
+}
+tr:nth-child(odd){
+	background-color: #92D0F4;
+}

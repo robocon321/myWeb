@@ -1,0 +1,123 @@
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+.container1 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    align-items: center;
+}
+
+.container1 .content1 {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container1 .content1 li {
+    list-style: none;
+    flex-basis: 100px;
+}
+
+.container1 .content1 li a {
+    color: white;
+}
+
+.container1 .content1 li a:hover {
+    color: #8700E5;
+}
+
+.container1 .content1 ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 5;
+    margin: 0px;
+}
+
+.container1 .content1 img {
+    flex-grow: 1;
+}
+
+.container1 .content1 p {
+    margin: 0px;
+    color: white;
+    flex-grow: 3;
+}
+
+.container1 .content1 .search {
+    padding-left: 10px;
+}
+
+.container1 .content1 .search i {
+    color: white;
+}
+
+.container2 {
+    background-color: #C8C7C7;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container2 .content1 {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.container2 .content1 i {
+    flex-grow: 1;
+}
+
+.container2 .content1 p {
+    margin: 0px;
+    flex-grow: 1;
+    border-right: 1px solid black;
+}
+
+.container2 .content1 ul {
+    margin: 0px;
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 6;
+}
+
+.container2 .content1 .ads {
+    display: flex;
+    justify-content: center;
+    flex-grow: 3;
+}
+
+.container2 .content1 ul li {
+    margin: 0px;
+    list-style: none;
+}
+
+.container3 {
+	display: flex;
+    widows: 970px;
+    justify-content: center;
+}
+.container3 .content{
+	width:650px;
+}
+.container3 .sidebar{
+	width: 300px;
+}
+.container3 .content .content1 .show img{
+	max-width: 100%;
+}
+.container3 .content .content1 .list img{
+	margin-top: 7px;
+	max-width: 19%;
+	float: left;
+	margin-right: 5px;
+}
