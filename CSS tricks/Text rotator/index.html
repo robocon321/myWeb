@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Text rotator</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+
+<body>
+    <h1>Be
+        <span style="display: initial"> Happy</span>
+        <span> Tired</span>
+        <span> Creature</span>
+        <span> Hungry</span>
+        <span> Fantatis</span>
+    </h1>
+    <script type="text/javascript">
+    var element = document.getElementsByTagName("span");
+    var i = 0;
+    var timeOut = setInterval(() => {
+        element[i].style.display = "none";
+        i=(i+1)%element.length;
+        element[i].style.display = "initial";
+    }, 1000);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,16 @@
+body{
+	margin: 0px;
+	padding: 0px;
+	background-color:black;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+h1{
+	color: #565656;
+}
+h1 span{
+	color: #4AFF4A;
+	display: none;
+}
