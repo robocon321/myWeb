@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>AlpineJS</title>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v1.9.7/dist/alpine.js" defer></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=MutationObserver%2CArray.from%2CArray.prototype.forEach%2CMap%2CSet%2CArray.prototype.includes%2CString.prototype.includes%2CPromise%2CNodeList.prototype.forEach%2CObject.values%2CReflect%2CReflect.set"></script>
+    <script src="https://cdn.jsdelivr.net/npm/proxy-polyfill@0.3.0/proxy.min.js"></script>
+</head>
+
+<body>
+    <div x-data="{ open: false }" style="margin-bottom: 50px">
+        <button @click="open = true">Open Dropdown</button>
+        <ul x-show="open" @click.away="open = false">
+            Dropdown Body
+        </ul>
+    </div>
+    <div x-data="{ tab: 'foo' }">
+        <button :class="{ 'active': tab === 'foo' }" @click="tab = 'foo'">Foo</button>
+        <button :class="{ 'active': tab === 'bar' }" @click="tab = 'bar'">Bar</button>
+        <div x-show="tab === 'foo'">Tab Foo</div>
+        <div x-show="tab === 'bar'">Tab Bar</div>
+    </div>
+    <div x-data="{ open: false }">
+        <button @mouseenter.once="
+            fetch('/dropdown-partial.html')
+                .then(response => response.text())
+                .then(html => { $refs.dropdown.innerHTML = html })
+        " @click="open = true">Show Dropdown</button>
+        <div x-ref="dropdown" x-show="open" @click.away="open = false">
+            Loading Spinner...
+        </div>
+    </div>
+</body>
+
+</html>
