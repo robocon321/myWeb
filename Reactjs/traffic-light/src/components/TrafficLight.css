@@ -1,0 +1,25 @@
+.TrafficLight{
+    background-color: black;
+    width: fit-content;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.bulb{
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;   
+    margin: 10px;
+    opacity: 0.5;
+}
+.red{
+    background-color: red;
+}
+.yellow{
+    background-color:yellow;
+}
+.green{
+    background-color:rgb(0, 255, 0);
+}
+.active{
+    opacity: 1;
+}
